@@ -1,4 +1,6 @@
 # Dart Proximity Hash
+![Pub Version](https://img.shields.io/pub/v/proximity_hash)
+
 **Proximity Hash** generates a set of geohashes that cover a circular area, given the center coordinates and the radius. Geohash is a public domain geocode system which encodes a geographic location into a short string of letters and digits and is used as unique identifies and to represent point data in databases.
 
 For example the point
