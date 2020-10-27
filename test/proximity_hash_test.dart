@@ -14,24 +14,23 @@ void main() {
   });
   group('Centroid tests', () {
     test('get centroid', () {
-      List<double> centroid = getCentroid(10,10,10,10);
+      List<double> centroid = getCentroid(10, 10, 10, 10);
       assert(centroid[0] == 15.0);
       assert(centroid[1] == 15.0);
     });
   });
   group('Lat Lng Conversion tests', () {
     test('convert to geohash', () {
-      String geohash = convertToGeohash(1000.0,1000.0, 12.0, 77.0,10);
+      String geohash = convertToGeohash(1000.0, 1000.0, 12.0, 77.0, 10);
       assert(geohash == "tdnu26hmkq");
     });
   });
   group('create geohash tests', () {
     test('create geohash', () {
       List<String> geohashes = createGeohashes(48.858156, 2.294776, 100, 3);
-      assert(geohashes.length==2);
+      assert(geohashes.length == 2);
       assert(geohashes.contains("u0d"));
       assert(geohashes.contains("u09"));
     });
   });
-  
 }
