@@ -1,3 +1,7 @@
+## [1.1.0]
+
+* fix bug where geohashes returned duplicates
+
 ## [1.0.2]
 
 * Add docstrings and fixed formating according to dartfmt
