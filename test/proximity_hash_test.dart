@@ -32,5 +32,11 @@ void main() {
       assert(geohashes.contains("u0d"));
       assert(geohashes.contains("u09"));
     });
+    test('create multiple geohashes', () {
+      List<String> geohashes =
+          createGeohashes(43.649093099999995, -79.42056769999999, 4000, 5);
+      assert(geohashes.length == 9);
+      assert(geohashes.contains("dpz83"));
+    });
   });
 }

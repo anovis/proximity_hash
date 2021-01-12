@@ -18,7 +18,7 @@ To get this plugin, add `proximity_hash` as a [dependency in your pubspec.yaml f
 
 ```yaml
 dependencies:
-  proximity_hash: ^1.0.2
+  proximity_hash: ^1.1.0
 ```
 
 ## Usage

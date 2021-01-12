@@ -3,7 +3,7 @@ import 'package:dart_geohash/dart_geohash.dart';
 
 GeoHasher geoHasher = GeoHasher();
 
-/// Get centroid 
+/// Get centroid
 List<double> getCentroid(latitude, longitude, height, width) {
   double centeredY = latitude + (height / 2);
   double centeredX = longitude + (width / 2);
@@ -101,9 +101,10 @@ List<String> createGeohashes(
           convertToGeohash(-centerY, centerX, latitude, longitude, precision),
           convertToGeohash(centerY, -centerX, latitude, longitude, precision),
           convertToGeohash(-centerY, -centerX, latitude, longitude, precision),
-        ].toSet().toList());
+        ]);
       }
     }
   }
-  return geohashes;
+  // remove duplicates
+  return geohashes.toSet().toList();
 }
