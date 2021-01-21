@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:collection';
 import 'package:dart_geohash/dart_geohash.dart';
 
 GeoHasher geoHasher = GeoHasher();
@@ -49,7 +50,7 @@ List<String> createGeohashes(
   double x = 0.0;
   double y = 0.0;
 
-  List<String> geohashes = [];
+  HashSet<String> geohashes = HashSet();
 
   List<double> gridWidth = [
     5009400.0,
@@ -105,6 +106,5 @@ List<String> createGeohashes(
       }
     }
   }
-  // remove duplicates
-  return geohashes.toSet().toList();
+  return geohashes.toList();
 }
