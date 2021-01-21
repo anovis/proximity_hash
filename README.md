@@ -34,6 +34,23 @@ List<String> proximityGeohashes = createGeohashes(48.864716, 2.349014, 5000, 3);
 // proximityGeohashes == ["u0d","u09"]
 ```
 
+## Performance
+
+Benchmark of `createGeohashes` for different precisions with radius `1000`. Performance can become limiting starting at precision 9. Note that a larger radius will also decrease performance.
+
+| Precicion      | Time |
+| ----------- | ----------- |
+| 1      | .0068 sec |
+| 2      | .0068 sec |
+| 3      | .0070 sec |
+| 4      | .0070 sec |
+| 5      | .0070 sec |
+| 6      | .0079 sec |
+| 7      | .0232 sec |
+| 8      | .1664 sec |
+| 9      | 4.996 sec |
+| 10     | 153.5 sec |
+
 ## Issues
 
 Please file any issues, bugs or feature requests as an issue on our [GitHub](https://github.com/anovis/proximity_hash/issues) page.
