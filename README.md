@@ -12,6 +12,14 @@ will covert to
 
 `6g3mc626`.
 
+## Geohash
+
+Proximity hash also comes with a geohash library forked from [dart_geohash](https://github.com/nfrawley93/dart_geohash/pull/5) since it was not being actively maintained. 
+
+```dart
+import 'package:proximity_hash/geohash.dart';
+```
+
 ## Install
 
 To get this plugin, add `proximity_hash` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/). For example:
