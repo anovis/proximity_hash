@@ -1,13 +1,10 @@
 name: proximity_hash
 description: Generate a set of geohashes that cover a circular area, given the center coordinates and the radius
-version: 1.1.0
+version: 2.0.0
 homepage: https://github.com/anovis/proximity_hash
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
-
-dependencies:
-  dart_geohash: ^1.0.2
+  sdk: ">=2.12.0 <3.0.0"
 
 dev_dependencies:
-  test: ^1.2.0
+  test: ^1.17.5
