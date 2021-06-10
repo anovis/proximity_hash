@@ -93,7 +93,8 @@ List<String> createGeohashes(
       double tempLong = y + width * j;
 
       if (inCircleCheck(tempLat, tempLong, y, x, radius)) {
-        List<double?> centerList = getCentroid(tempLat, tempLong, height, width);
+        List<double?> centerList =
+            getCentroid(tempLat, tempLong, height, width);
         double centerX = centerList[0]!;
         double centerY = centerList[1]!;
 
