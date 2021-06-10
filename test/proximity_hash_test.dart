@@ -14,7 +14,7 @@ void main() {
   });
   group('Centroid tests', () {
     test('get centroid', () {
-      List<double> centroid = getCentroid(10, 10, 10, 10);
+      List<double?> centroid = getCentroid(10, 10, 10, 10);
       assert(centroid[0] == 15.0);
       assert(centroid[1] == 15.0);
     });

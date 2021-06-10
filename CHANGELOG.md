@@ -1,3 +1,8 @@
+## [2.0.0]
+
+* migrate to null safety
+* now includes geohash library
+
 ## [1.1.0]
 
 * fix bug where geohashes returned duplicates

@@ -1,13 +1,13 @@
 import 'dart:math';
 import 'dart:collection';
-import 'package:dart_geohash/dart_geohash.dart';
+import 'package:proximity_hash/geohash.dart';
 
 GeoHasher geoHasher = GeoHasher();
 
 /// Get centroid
-List<double> getCentroid(latitude, longitude, height, width) {
-  double centeredY = latitude + (height / 2);
-  double centeredX = longitude + (width / 2);
+List<double?> getCentroid(latitude, longitude, height, width) {
+  double? centeredY = latitude + (height / 2);
+  double? centeredX = longitude + (width / 2);
 
   return [centeredX, centeredY];
 }
@@ -31,8 +31,8 @@ String convertToGeohash(y, x, latitude, longitude, int precision) {
 
   double rEarth = 6371000;
 
-  double latDiff = (y / rEarth) * (180 / pi);
-  double lonDiff = (x / rEarth) * (180 / pi) / cos(latitude * pi / 180);
+  double? latDiff = (y / rEarth) * (180 / pi);
+  double? lonDiff = (x / rEarth) * (180 / pi) / cos(latitude * pi / 180);
 
   double finalLat = latitude + latDiff;
   double finalLon = longitude + lonDiff;
@@ -93,9 +93,9 @@ List<String> createGeohashes(
       double tempLong = y + width * j;
 
       if (inCircleCheck(tempLat, tempLong, y, x, radius)) {
-        List<double> centerList = getCentroid(tempLat, tempLong, height, width);
-        double centerX = centerList[0];
-        double centerY = centerList[1];
+        List<double?> centerList = getCentroid(tempLat, tempLong, height, width);
+        double centerX = centerList[0]!;
+        double centerY = centerList[1]!;
 
         geohashes.addAll([
           convertToGeohash(centerY, centerX, latitude, longitude, precision),
