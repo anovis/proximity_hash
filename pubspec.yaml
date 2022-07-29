@@ -1,6 +1,6 @@
 name: proximity_hash
-description: Generate a set of geohashes that cover a circular area, given the center coordinates and the radius
-version: 2.0.0
+description: Generate a set of geohashes that cover a circular or square area, given the center coordinates and the radius
+version: 2.1.0
 homepage: https://github.com/anovis/proximity_hash
 
 environment:
