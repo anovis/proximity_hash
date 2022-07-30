@@ -111,7 +111,7 @@ List<String> createGeohashes(
   return geohashes.toList();
 }
 
-// Generate geohashes based on bounding box in meters
+// Generate geohashes based on bounding box
 List<String> createGeohashesBoundingBox(double minlatitude, double minlongitude,
     double maxlatitude, double maxlongitude, int precision) {
   if (precision > 12 || precision < 0) {
@@ -125,8 +125,8 @@ List<String> createGeohashesBoundingBox(double minlatitude, double minlongitude,
   double height = (gridHeight[precision - 1]) / 2;
   double width = (gridWidth[precision - 1]) / 2;
 
-  double centerLatitude = (maxlatitude - minlatitude).abs() / 2;
-  double centerLongitude = (maxlongitude - minlongitude).abs() / 2;
+  double centerLatitude = (maxlatitude + minlatitude).abs() / 2;
+  double centerLongitude = (maxlongitude + minlongitude).abs() / 2;
 
   int latMoves = ((maxlatitude - minlatitude).abs() / height).ceil();
   int lonMoves = ((maxlongitude - minlongitude).abs() / width).ceil();

@@ -23,9 +23,9 @@ void main() {
 
   //get geohashes within bounding box meter
   List<String> proximityGeohashesBox =
-      createGeohashesBoundingBox(48.864716, 49.864716, 2.349014, 3.349014, 5);
+      createGeohashesBoundingBox(47.864716, 1.349014, 49.864716, 3.349014, 3);
   for (var g in proximityGeohashesBox) {
     print(
-        'Geohash ${g} is in box 48.864716, 49.864716, 2.349014, 3.349014 with precision 5');
+        'Geohash ${g} is in box 48.864716, 49.864716, 2.349014, 3.349014 with precision 3');
   }
 }
