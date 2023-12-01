@@ -38,5 +38,12 @@ void main() {
       assert(geohashes.length == 9);
       assert(geohashes.contains("dpz83"));
     });
+    test('create geohash bounding box', () {
+      List<String> geohashes = createGeohashesBoundingBox(
+          47.858156, 1.294776, 49.858156, 3.294776, 3);
+      assert(geohashes.length == 2);
+      assert(geohashes.contains("u0d"));
+      assert(geohashes.contains("u09"));
+    });
   });
 }

@@ -127,11 +127,12 @@ class GeoHasher {
   String encode(double longitude, double latitude, {int precision = 12}) {
     bool precisionOdd = precision % 2 == 1;
     int originalPrecision = precision + 0;
-    if (longitude < -180.0 || longitude > 180.0)
+    if (longitude < -180.0 || longitude > 180.0) {
       throw RangeError.range(longitude, -180, 180, "Longitude");
-    if (latitude < -90.0 || latitude > 90.0)
+    }
+    if (latitude < -90.0 || latitude > 90.0) {
       throw RangeError.range(latitude, -90, 90, "Latitude");
-
+    }
     if (precision % 2 == 1) {
       precision = precision + 1;
     }
@@ -160,11 +161,12 @@ class GeoHasher {
   /// Decodes a given String into a List<double> containing Longitude and
   /// Latitude in decimal degrees.
   List<double> decode(String geohash) {
-    if (geohash.isEmpty)
+    if (geohash.isEmpty) {
       throw ArgumentError.value(geohash, "geohash");
-    else if (!geohash
-        .contains(new RegExp(r'^[0123456789bcdefghjkmnpqrstuvwxyz]+$')))
+    } else if (!geohash
+        .contains(new RegExp(r'^[0123456789bcdefghjkmnpqrstuvwxyz]+$'))) {
       throw ArgumentError("Invalid character in GeoHash");
+    }
 
     List<int> bits = _geoHashToBits(geohash);
     List<int> longitudeBits = [];
@@ -231,11 +233,12 @@ class GeoHasher {
   /// Returns a Map<String, String> containing the `Direction` as the key and
   /// the value being the geohash of the neighboring geohash in that direction.
   Map<String, String> neighbors(String geohash) {
-    if (geohash.isEmpty)
+    if (geohash.isEmpty) {
       throw ArgumentError.value(geohash, "geohash");
-    else if (!geohash
-        .contains(new RegExp(r'^[0123456789bcdefghjkmnpqrstuvwxyz]+$')))
+    } else if (!geohash
+        .contains(new RegExp(r'^[0123456789bcdefghjkmnpqrstuvwxyz]+$'))) {
       throw ArgumentError("Invalid character in GeoHash");
+    }
 
     return {
       Direction.NORTH.toString().split(".")[1]:

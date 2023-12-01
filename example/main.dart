@@ -20,4 +20,12 @@ void main() {
           'The coordinates ${g[0].toString()},${g[1].toString()} are within 5000 meters of 48.864716, 2.349014');
     }
   }
+
+  //get geohashes within bounding box meter
+  List<String> proximityGeohashesBox =
+      createGeohashesBoundingBox(47.864716, 1.349014, 49.864716, 3.349014, 3);
+  for (var g in proximityGeohashesBox) {
+    print(
+        'Geohash ${g} is in box 48.864716, 49.864716, 2.349014, 3.349014 with precision 3');
+  }
 }
