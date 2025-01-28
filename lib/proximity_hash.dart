@@ -85,6 +85,21 @@ List<String> createGeohashes(
   double height = (gridHeight[precision - 1]) / 2;
   double width = (gridWidth[precision - 1]) / 2;
 
+  // Brute fix for extreme latitudes.
+  if (latitude > 60 || latitude < -60) {
+    height = (gridHeight[precision - 1]) / 8;
+    width = (gridWidth[precision - 1]) / 8;
+  }
+
+  if (latitude > 82 || latitude < -82) {
+    height = (gridHeight[precision - 1]) / 32;
+    width = (gridWidth[precision - 1]) / 32;
+  }
+  if (latitude > 89 || latitude < -89) {
+    height = (gridHeight[precision - 1]) / 256;
+    width = (gridWidth[precision - 1]) / 256;
+  }
+
   int latMoves = (radius / height).ceil();
   int lonMoves = (radius / width).ceil();
 
