@@ -1,3 +1,7 @@
+## [2.2.0]
+
+* Fixed geohash generation for extreme latitudes
+
 ## [2.1.0]
 
 * createGeohashesBoundingBox
